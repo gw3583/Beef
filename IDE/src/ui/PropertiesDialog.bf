@@ -1718,6 +1718,8 @@ namespace IDE.ui
 		void BrowseForFile(String outPath)
 		{
 #if !CLI		
+            Runtime.FatalError();
+            /*
 			var fileDialog = scope OpenFileDialog();
 			fileDialog.Title = "Select File";
 			fileDialog.SetFilter("All files (*.*)|*.*");
@@ -1737,12 +1739,15 @@ namespace IDE.ui
 					return;
 				}
 			}
+			*/
 #endif			
 		}
 
 		void BrowseForFolder(String outPath)
 		{
 #if !CLI		
+            Runtime.FatalError();
+            /*
 			var folderDialog = scope FolderBrowserDialog();
 			if (!outPath.IsWhiteSpace)
 			{
@@ -1752,6 +1757,7 @@ namespace IDE.ui
 			{
 				outPath.Set(folderDialog.SelectedPath);
 			}
+			*/
 #endif			
 		}
 

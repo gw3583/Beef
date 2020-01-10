@@ -107,6 +107,8 @@ namespace IDE.ui
 								Path.GetExtension(filePath, extName);
 								extName.ToLower();
 
+            Runtime.FatalError();
+            /*
 								var fileDialog = scope System.IO.OpenFileDialog();
 								fileDialog.ShowReadOnly = false;
 								fileDialog.Title = "Select Image File";
@@ -123,6 +125,7 @@ namespace IDE.ui
 									var fileNames = fileDialog.FileNames;
 									gApp.mDebugger.LoadImageForModule(filePath, fileNames[0]);
 								}
+								*/
 							});
 					});
 
@@ -137,6 +140,9 @@ namespace IDE.ui
 								String dir = scope String();
 								Path.GetDirectoryPath(filePath, dir);
 								IDEUtils.FixFilePath(dir);
+
+            Runtime.FatalError();
+            /*
 
 								var fileDialog = scope System.IO.OpenFileDialog();
 								fileDialog.ShowReadOnly = false;
@@ -156,6 +162,7 @@ namespace IDE.ui
 										gApp.mDebugger.LoadDebugInfoForModule(filePath, fileNames[0]);
 									}
 								}
+								*/
 							});
 					});
 				MenuWidget menuWidget = ThemeFactory.mDefault.CreateMenuWidget(menu);

@@ -132,6 +132,8 @@ namespace IDE.ui
 		void DoBrowse()
 		{
 #if !CLI
+            Runtime.FatalError();
+            /*
 			String str = scope String();
 			GetStartupOption(scope (options) => options.mDebugOptions.mCommand, str);
 
@@ -155,6 +157,7 @@ namespace IDE.ui
 				if (!fileNames.IsEmpty)
 					mTargetCombo.Label = fileNames[0];
 			}
+			*/
 #endif
 		}
 

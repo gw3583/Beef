@@ -828,6 +828,8 @@ namespace IDE.ui
         public void ImportFile(ProjectFolder folder)
         {
 #if !CLI
+            Runtime.FatalError();
+            /*
             /*String fullDir = scope String();
             var checkFolder = folder;
             while (checkFolder != null)
@@ -908,6 +910,7 @@ namespace IDE.ui
                 //folder.mProject.mLastImportDir.Set(dir);
                 Sort();                
             }
+            */
 #endif
         }
 
@@ -981,6 +984,8 @@ namespace IDE.ui
         public void ImportFolder(ProjectFolder folder)
         {
 #if !CLI
+            Runtime.FatalError();
+            /*
 			if (!CheckProjectModify(folder.mProject))
 				return;
 
@@ -1027,6 +1032,7 @@ namespace IDE.ui
                 	folder.mProject.SetChanged();
                 Sort();
             }
+            */
 #endif
         }
 
@@ -1778,6 +1784,8 @@ namespace IDE.ui
 #if !CLI
 			gApp.mBeefConfig.Refresh();
 
+            Runtime.FatalError();
+            /*
             var fileDialog = scope OpenFileDialog();
 			fileDialog.ShowReadOnly = false;
             fileDialog.Title = "Import Project";
@@ -1805,6 +1813,7 @@ namespace IDE.ui
 					ImportProject(origProjFilePath);
                 }
             }
+            */
 #endif
         }
 

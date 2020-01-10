@@ -761,6 +761,8 @@ namespace IDE
         public void DoOpenFile()
         {
 #if !CLI
+            Runtime.FatalError();
+            /*
 			String fullDir = scope .();
 			let sourceViewPanel = GetActiveSourceViewPanel();
 			if (sourceViewPanel != null)
@@ -788,6 +790,7 @@ namespace IDE
 					ShowSourceFile(openFileName);
 				}
 			}
+            */
 #endif
         }
 
@@ -807,6 +810,8 @@ namespace IDE
 		public void DoOpenWorkspace()
 		{		
 #if !CLI
+            Runtime.FatalError();
+            /*
 			if (mDeferredOpenFileName != null)
 			{
 				String prevFilePath = scope .(mDeferredOpenFileName);
@@ -831,6 +836,7 @@ namespace IDE
 				String.NewOrSet!(mDeferredOpenFileName, selectedPath);
 				mDeferredOpen = .Workspace;
 			}
+            */
 
 #endif
 		}
@@ -863,6 +869,8 @@ namespace IDE
 		public void DoOpenDebugSession()
 		{		
 #if !CLI
+            Runtime.FatalError();
+            /*
 			if (mDeferredOpenFileName != null)
 			{
 				CloseWorkspace();
@@ -888,6 +896,7 @@ namespace IDE
 					break;
 				}
 			}
+            */
 
 #endif
 		}
@@ -914,6 +923,8 @@ namespace IDE
 		public void DoOpenCrashDump()
 		{		
 #if !CLI
+            Runtime.FatalError();
+            /*
 			if (mDeferredOpenFileName != null)
 			{
 				OpenCrashDump(mDeferredOpenFileName);
@@ -934,6 +945,7 @@ namespace IDE
 					break;
 				}
 			}
+            */
 #endif
 		}
 
@@ -1326,6 +1338,8 @@ namespace IDE
 		public bool SaveFileAs(SourceViewPanel sourceViewPanel)
 		{
 #if !CLI
+            Runtime.FatalError();
+            /*
 			SaveFileDialog dialog = scope .();
 			//dialog.ValidateNames = true;
 
@@ -1359,6 +1373,7 @@ namespace IDE
 			// Kinda hacky - we lose all view information...
 			CloseDocument(sourceViewPanel);
 			ShowSourceFile(filePath);
+            */
 #endif
 			return true;
 		}
@@ -1832,6 +1847,8 @@ namespace IDE
 				if (mWorkspace.mDir == null)
 				{
 					let activeWindow = GetActiveWindow();
+                    Runtime.FatalError();
+                    /*
 	
 					FolderBrowserDialog folderDialog = scope FolderBrowserDialog();
 					//folderDialog.SelectedPath = fullDir;
@@ -1849,6 +1866,7 @@ namespace IDE
 						DeleteAndNullify!(mWorkspace.mDir);
 						return false;
 					}
+                    */
 				}
 #endif
 
@@ -1895,6 +1913,8 @@ namespace IDE
 #if !CLI
 			if (project.mProjectPath.IsEmpty)
 			{
+                Runtime.FatalError();
+                /*
 				SaveFileDialog dialog = scope .();
 				let activeWindow = GetActiveWindow();
 
@@ -1923,8 +1943,9 @@ namespace IDE
 				dialog.OverwritePrompt = true;
 				if (dialog.ShowDialog(activeWindow).GetValueOrDefault() != .OK)
 					return false;
-				
+
 				project.mProjectPath.Set(dialog.FileNames[0]);
+                */
 			}
 #endif
 
@@ -9672,6 +9693,8 @@ namespace IDE
 #if CLI
 					Fail(err);
 #else
+                    Runtime.FatalError();
+                    /*
 					DarkDialog dlg = new DarkDialog("Visual C++ Not Found", err, DarkTheme.sDarkTheme.mIconError);
 					dlg.mWindowFlags |= .Modal;
 					dlg.AddOkCancelButtons(new (dlg) =>
@@ -9690,6 +9713,7 @@ namespace IDE
 					((DarkButton)dlg.mButtons[0]).Label = "Open Link";
 					dlg.PopupWindow(GetActiveWindow());
 					MessageBeep(.Error);
+                    */
 #endif
 				}
 			}
@@ -11953,7 +11977,9 @@ namespace IDE
 
 #if !CLI
 		void UpdateIPC()
-		{						
+		{
+            Runtime.FatalError();
+            /*
 			bool hasFocus = false;
 			for (var window in mWindows)
 			{
@@ -12016,7 +12042,8 @@ namespace IDE
 						}
 					}
 				}				
-			}			
+			}
+            */
 		}
 #endif
 

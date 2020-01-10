@@ -74,6 +74,8 @@ namespace IDE.ui
 							String path = scope .();
 							GetText(path);
 #if !CLI
+            Runtime.FatalError();
+            /*
 							FolderBrowserDialog folderDialog = scope .();
 							folderDialog.SelectedPath = path;
 							mWidgetWindow.PreModalChild();
@@ -81,7 +83,8 @@ namespace IDE.ui
 							{
 								SetText(scope String()..Append(folderDialog.SelectedPath));
 							}
-#endif							
+							*/
+#endif
 						}
 					});
 				mEditWidgetContent.mTextInsets.mRight += GS!(20);

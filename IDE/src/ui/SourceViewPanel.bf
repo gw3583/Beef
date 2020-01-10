@@ -2968,8 +2968,9 @@ namespace IDE.ui
 		void BrowseForFile()
 		{
 #if !CLI
+            Runtime.FatalError();
+            /*
 			var fileDialog = scope System.IO.OpenFileDialog();
-			
 
 			var initialDir = scope String(IDEApp.sApp.mWorkspace.mDir);
 			//initialDir.Replace('/', '\\');
@@ -3006,6 +3007,7 @@ namespace IDE.ui
 					break;
 			    }
 			}
+			*/
 #endif
 		}
 
